@@ -1,0 +1,21 @@
+{
+  "name": "Translation Updater",
+  "id": "figma-plugin-translation-updater",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/index.html",
+  "editorType": ["figma"],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "relaunchButtons": [
+    {
+      "command": "open",
+      "name": "Open Plugin"
+    }
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "types": ["@figma/plugin-typings", "node"],
+    "baseUrl": "."
+  },
+  "include": ["src/ui/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

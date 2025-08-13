@@ -1,0 +1,44 @@
+{
+  "type": "module",
+  "name": "figma-plugin-translation-updater",
+  "version": "1.0.0",
+  "author": "Sander Van Hullebusch",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "watch:ui": "vite --config vite.config.ts",
+    "watch:main": "tsc --project tsconfig.main.json --watch",
+    "watch": "concurrently \"npm run watch:main\" \"npm run watch:ui\"",
+    "build:main": "tsc --project tsconfig.main.json",
+    "build:ui": "vite build",
+    "build": "rm -rf dist && npm run build:ui && npm run build:main",
+    "build:watch": "rm -rf dist && npm run build:ui && npm run build:main -- --watch",
+    "preview": "serve dist"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.116.0",
+    "@types/node": "^24.2.1",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^7.6.0",
+    "esbuild": "^0.25.8",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
+    "serve": "^14.2.4",
+    "typescript": "^5.9.2",
+    "vite": "^6.3.5",
+    "vite-plugin-singlefile": "^2.3.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
