@@ -65,26 +65,32 @@ const App = () => {
           label={'Translation file'}
           file={translationsFile}
           setFile={setTranslationsFile}
-          onClear={() => setMockValuesFile(null)}
+          onClear={() => {
+            setTranslationsFile(null);
+            setMockValuesFile(null);
+          }}
         />
         <p>{translationsFile ? translationsFile.name : '-'}</p>
       </div>
 
       {/* --- MOCK VALUES --- */}
-      {translationsFile ? (
-        <div className="fileContainerIndent">
-          <div className="fileContainer">
-            <FileInput
-              label={'Mock values file'}
-              file={mockValuesFile}
-              setFile={setMockValuesFile}
-            />
-            <p>{mockValuesFile ? mockValuesFile.name : '-'}</p>
-          </div>
+      {/*{translationsFile ? (*/}
+      <div className="fileContainerIndent">
+        <div className="fileContainer">
+          <FileInput
+            label={'Mock values file'}
+            file={mockValuesFile}
+            setFile={setMockValuesFile}
+            onClear={() => {
+              setMockValuesFile(null);
+            }}
+          />
+          <p>{mockValuesFile ? mockValuesFile.name : '-'}</p>
         </div>
-      ) : (
-        <></>
-      )}
+      </div>
+      {/*) : (*/}
+      {/*  <></>*/}
+      {/*)}*/}
 
       <button className={'submitButton'} onClick={onClickTranslateNodes}>
         Translate nodes

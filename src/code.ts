@@ -8,7 +8,7 @@ type PluginMessage<
   T extends MyPluginMessage['type'] = MyPluginMessage['type'],
 > = Extract<MyPluginMessage, { type: T }>;
 
-figma.showUI(__html__, { width: 350, height: 200 });
+figma.showUI(__html__, { width: 400, height: 250 });
 
 figma.ui.onmessage = async (msg: PluginMessage) => {
   await figma.loadAllPagesAsync();
