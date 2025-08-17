@@ -11,12 +11,13 @@
     "dev": "vite",
     "watch:ui": "vite --config vite.config.ts",
     "watch:main": "tsc --project tsconfig.main.json --watch",
-    "watch": "concurrently \"npm run watch:main\" \"npm run watch:ui\"",
+    "watch": "concurrently \"yarn watch:main\" \"yarn watch:ui\"",
     "build:main": "tsc --project tsconfig.main.json",
     "build:ui": "vite build",
-    "build": "rm -rf dist && npm run build:ui && npm run build:main",
-    "build:watch": "rm -rf dist && npm run build:ui && npm run build:main -- --watch",
-    "preview": "serve dist"
+    "build": "rm -rf dist && yarn mock && yarn build:ui && yarn build:main",
+    "build:watch": "rm -rf dist && yarn build:ui && yarn build:main -- --watch",
+    "preview": "serve dist",
+    "mock": "cd ./_mock/ && node split-json.js"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.116.0",

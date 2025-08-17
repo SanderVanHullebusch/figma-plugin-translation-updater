@@ -1,0 +1,15 @@
+
+.buttonGroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonGroup button:nth-child(n+2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.buttonGroup button:first-child:not(:only-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}

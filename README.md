@@ -1,0 +1,2 @@
+# Figma plugin - Translation updater
+
