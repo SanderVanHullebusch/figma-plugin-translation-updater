@@ -46,7 +46,17 @@ figma.ui.onmessage = async (msg: PluginMessage) => {
       }) as TextNode[];
 
       for (const node of nodes) {
-        await figma.loadFontAsync(node.fontName as FontName);
+        if (node.fontName === figma.mixed) {
+          // Load all ranges
+          for (const style of node.getRangeAllFontNames(
+            0,
+            node.characters.length,
+          )) {
+            await figma.loadFontAsync(style);
+          }
+        } else {
+          await figma.loadFontAsync(node.fontName);
+        }
         if (node.name === '' || !(node.name in translations)) {
           continue;
         }
