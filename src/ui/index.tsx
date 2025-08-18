@@ -35,7 +35,7 @@ const App = () => {
       !isJSON(JSON.stringify(translationsFileContent)) ||
       !isJSON(JSON.stringify(mockValuesFileContent))
     ) {
-      console.log('File(s) is not correctly structured');
+      console.warn('File(s) is not correctly structured');
       return;
     }
 
@@ -43,7 +43,6 @@ const App = () => {
       ...JSON.parse(translationsFileContent),
       ...JSON.parse(mockValuesFileContent),
     });
-    console.log(resolvedTranslations);
     setTranslations(resolvedTranslations);
   };
 
@@ -101,8 +100,7 @@ const App = () => {
 
 try {
   const container = document.getElementById('root');
-  if (container) ReactDOM.createRoot(container).render(<App />);
-  else console.error('Root element not found');
+  container && ReactDOM.createRoot(container).render(<App />);
 } catch (e) {
   console.error('React mount error:', e);
 }

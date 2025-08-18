@@ -23,7 +23,6 @@ export const FileInput = ({ label, file, setFile, onClear }: Props) => {
         accept=".json,application/json"
         multiple={false}
         onChange={(e) => {
-          console.log(e.target.files);
           if (e.target.files) {
             setFile(e?.target?.files?.[0] ?? null);
           }
