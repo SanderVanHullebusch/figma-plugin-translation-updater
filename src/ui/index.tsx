@@ -47,6 +47,7 @@ const App = () => {
   };
 
   const onClickTranslateNodes = () => {
+    console.log({ translations });
     postPluginMessage({ type: 'translate-nodes', payload: translations });
   };
 
