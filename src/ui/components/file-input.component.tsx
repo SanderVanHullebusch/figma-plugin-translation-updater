@@ -33,7 +33,7 @@ export const FileInput = ({ label, file, setFile, onClear }: Props) => {
         <button onClick={() => ref.current?.click()}>{label}</button>
         {file ? (
           <button
-            className="button-black button-small"
+            className="button-red button-small"
             onClick={(e) => {
               if (onClear) {
                 onClear();
